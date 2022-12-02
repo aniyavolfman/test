@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // console.log("hello");
 // console.log('hello'.toUpperCase());
 // console.log('hello'.length);
@@ -10,7 +10,8 @@
 // const isComing = confirm('Please confirm hotel reservation');
 // console.log(isComing);
 // const x = 9;
-// const y = 5;
+// const y = 5;.
+
 // console.log(x % y);
 // let z = 5;
 // z += 10;
