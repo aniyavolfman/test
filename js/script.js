@@ -97,15 +97,15 @@
 // } while (password.length < 5);
 // console.log('entered password: ', password);
 
-// for (let i = 0; i <= 5; i += 1) {
-//     console.log(i);
-//     if (i === 3) {
-//         console.log('found number 3');
-//         break;
-//     }
-// }
+for (let i = 0; i <= 5; i += 1) {
+    console.log(i);
+    if (i === 3) {
+        console.log('found number 3');
+        break;
+    }
+}
 
-// console.log('log after a cycle');
+console.log('log after a cycle');
 
 const number = 10;
 for (let i = 0; i < number; i += 1) {
