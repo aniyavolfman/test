@@ -130,21 +130,152 @@
 
 // console.log(reverseWords('apple'));
 
-function reverseWords(str) {
-    let result = str.split(' ');
-    let reverseArrow = [];
-    let resultReverse;
-    for (let i = 0; i <= result.length-1; i += 1) {
-        let x = result[i].split('');
-        let reverseX = x.reverse();
-        let reverseArrowX = reverseX.join('');
-        reverseArrow.push(reverseArrowX);
+// function reverseWords(str) {
+//     let result = str.split(' ');
+//     let reverseArrow = [];
+//     let resultReverse;
+//     for (let i = 0; i <= result.length-1; i += 1) {
+//         let x = result[i].split('');
+//         let reverseX = x.reverse();
+//         let reverseArrowX = reverseX.join('');
+//         reverseArrow.push(reverseArrowX);
     
+//     }
+//     resultReverse = reverseArrow.join(' ');
+//     return resultReverse;
+
+
+// }
+
+// console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
+
+// const pizzaPalace = {
+//     pizzas: ["Ultracheese", "Smoked", "Four meats"],
+//     order(pizzaName, onSuccess, onError) {
+//     if (pizzaPalace.pizzas.includes(pizzaName)) {
+//         return onSuccess(pizzaName, makePizza);
+//     }
+//     return onError(pizzaName, onOrderError);
+//     },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+// return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+// return `Error! ${error}`;
+// }
+
+// // Method calls with callbacks
+// pizzaPalace.order("Smoked", makePizza, onOrderError);
+// pizzaPalace.order("Four meats", makePizza, onOrderError);
+// pizzaPalace.order("Big Mike", makePizza, onOrderError);
+// pizzaPalace.order("Vienna", makePizza, onOrderError);
+
+// console.log(pizzaPalace.order("Smoed", makePizza, onOrderError));
+
+// function calculateTotalPrice(orderedItems) {
+//     let totalPrice = 0;
+//     // Change code below this line
+
+//     // for (let i = 0; i < orderedItems.length; i += 1) {
+//     //   totalPrice += orderedItems[i];
+//     // }
+
+//     orderedItems.forEach(
+//         function (number, i) {
+//             totalPrice += orderedItems[i];
+//         }
+//     )
+//     // Change code above this line
+//     return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// function filterArray(numbers, value) {
+// const filteredNumbers = [];
+//   // Change code below this line
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] > value) {
+//   //     filteredNumbers.push(numbers[i]);
+//   //   }
+//   // }
+    
+//     numbers.forEach(
+//         function (number, i) {
+//             if (numbers[i] > value) {
+//         filteredNumbers.push(numbers[i]);
+//     }
+//         }
+//     )
+
+//   // Change code above this line
+// return filteredNumbers;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// function getCommonElements(firstArray, secondArray) {
+// const commonElements = [];
+//   // Change code below this line
+
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
+    
+//     firstArray.forEach(
+//         function (number, i) {
+//             if (secondArray.includes(firstArray[i])) {
+//         commonElements.push(firstArray[i]);
+//     }
+//         }
+//     )
+
+// return commonElements;
+//   // Change code above this line
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] % 2 === 0) {
+//   //     numbers[i] = numbers[i] + value;
+//   //   }
+//   // }
+// const newArray = numbers;
+//   newArray.forEach( 
+//     (number, i ) => { if (newArray[i] % 2 === 0) {
+//       (newArray[i] = newArray[i] + value);}
+//     }
+//   );
+//   return newArray;
+//   // Change code above this line
+// }
+
+function changeEven(numbers, value) {
+const newArray = [];
+  numbers.forEach( 
+      number => {
+          if (number % 2 === 0) {
+              (newArray.push(number + value));
+          }
+          else { newArray.push(number) };
     }
-    resultReverse = reverseArrow.join(' ');
-    return resultReverse;
+  );
 
-
+    return newArray;
+  // Change code above this line
 }
 
-console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
+
+console.log(changeEven([1, 2, 3, 4, 5], 10));
