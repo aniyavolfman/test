@@ -129,8 +129,8 @@
 // }
 // console.log(isLeapYear(2000))
 
-function unscrambleEggs(word){
-    return word.split('egg').join('')
-}
+// function unscrambleEggs(word){
+//     return word.split('egg').join('')
+// }
 
-console.log(unscrambleEggs("ceggodegge heggeregge"))
+// console.log(unscrambleEggs("ceggodegge heggeregge"))
