@@ -5,12 +5,10 @@
 //     }
 
 //     return massive.join('');
-    
+
 // }
 
 // console.log(repeatStr(6, 'hello'));
-
-
 
 // function basicOp(operation, value1, value2)
 // {
@@ -125,7 +123,6 @@
 //     resultReverse = reverseArrow.join('');
 //     return resultReverse;
 
-
 // }
 
 // console.log(reverseWords('apple'));
@@ -139,11 +136,10 @@
 //         let reverseX = x.reverse();
 //         let reverseArrowX = reverseX.join('');
 //         reverseArrow.push(reverseArrowX);
-    
+
 //     }
 //     resultReverse = reverseArrow.join(' ');
 //     return resultReverse;
-
 
 // }
 
@@ -206,7 +202,7 @@
 //   //     filteredNumbers.push(numbers[i]);
 //   //   }
 //   // }
-    
+
 //     numbers.forEach(
 //         function (number, i) {
 //             if (numbers[i] > value) {
@@ -230,7 +226,7 @@
 //   //     commonElements.push(firstArray[i]);
 //   //   }
 //   // }
-    
+
 //     firstArray.forEach(
 //         function (number, i) {
 //             if (secondArray.includes(firstArray[i])) {
@@ -276,7 +272,6 @@
 //     return newArray;
 //   // Change code above this line
 // }
-
 
 // console.log(changeEven([1, 2, 3, 4, 5], 10));
 
@@ -338,7 +333,7 @@
 //   return names;
 
 // };
-  
+
 // console.log(getUserNames([
 //   {
 //     name: "Moore Hensley",
@@ -418,7 +413,6 @@
 //     age: 39,
 //   },
 // ]))
-
 
 // const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
 // // Change code below this line
@@ -713,7 +707,7 @@
 //   const userFriend = users.flatMap(friend => friend.friends);
 //   const userFriendUnique = userFriend.filter((friend, index, array) => array.indexOf(friend) === index);
 //   return userFriendUnique;
-  
+
 // };
 
 // console.log(getFriends([
@@ -788,7 +782,6 @@
 //     age: 39
 //   }
 // ]))
-
 
 // const getActiveUsers = (users) => {
 //   const activeUser = users.filter(user => user.isActive === true);
@@ -1036,7 +1029,6 @@
 //     gender: "female"
 //   }
 // ]))
-
 
 // const isAnyUserActive = users => {
 //   const activeUsers = users.some((activeUser) => activeUser.isActive === true);
@@ -1544,11 +1536,11 @@
 //   addItem(newItem){
 //     this.items.push(newItem);
 //   }
-  
+
 //   removeItem(itemToRemove) {
-    
+
 //     let index = this.items.indexOf(itemToRemove);
-    
+
 //     let indexRemive = this.items.splice(index, 1);
 //     return indexRemive;
 //       // .splice(indexOf(itemToRemove), 1);
@@ -1581,9 +1573,8 @@
 //   padBoth(str) {
 //     return this.value = str + this.value + str;
 //   }
-  
-// }
 
+// }
 
 // // Change code above this line
 // const builder = new StringBuilder(".");
@@ -1594,3 +1585,41 @@
 // console.log(builder.getValue()); // "^.^"
 // builder.padBoth("=");
 // console.log(builder.getValue()); // "=^.^="
+
+// function fizBaz(number) {
+//   let result = '';
+//   if (number % 2 === 0) {
+//     result += 'fiz';
+//   }
+//   if (number % 3 === 0) {
+//     result += 'baz';
+//   }
+
+//   return result;
+// }
+
+// console.log(fizBaz(6));
+
+// const array1 = string1.toLowerCase().split('');
+
+// const object1 = {};
+
+// for (let i = 0; i < array1.length; i += 1) {
+//   object1[i] = array1[i];
+// }
+
+// console.log(object1);
+
+function isAnagram(string1, string2) {
+  if (string1.length !== string2.length) return false;
+
+  const sortedString1 = string1.toLowerCase().split('').sort().join('');
+  const sortedString2 = string2.toLowerCase().split('').sort().join('');
+
+  if (sortedString1 === sortedString2) {
+    return true;
+  }
+  return false;
+}
+
+console.log(isAnagram('aNna', 'naaN'));

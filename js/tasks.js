@@ -134,3 +134,228 @@
 // }
 
 // console.log(unscrambleEggs("ceggodegge heggeregge"))
+
+// [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+
+
+// var maxSequence = function (arr) {
+//     let localMax = 0;
+//     let globalMax = 0;
+    
+//     for (let i = 0; i < arr.length; i += 1){
+//         localMax = Math.max(arr[i], arr[i] + localMax);
+//         if (localMax > globalMax) {
+//             globalMax = localMax;
+//         }
+//     }
+//     return globalMax;
+// }
+
+
+
+// console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+
+//----------------------- BATTLE FIELD
+
+// const CHECKED = 0;
+
+// const DELTAS = [
+//   {
+//     x: 0,
+//     y: 1
+//   },
+//   {
+//     x: 1,
+//     y: 0,
+//   },
+//   {
+//     x: 0,
+//     y: -1,
+//   },
+//   {
+//     x: -1,
+//     y: 0
+//   }
+// ];
+
+// const isOnBoard = (boardLength, x, y) => x >= 0 && x < boardLength && y >= 0 && y < boardLength;
+
+// const isNotChecked = (cell) => cell !== CHECKED;
+
+// const isValidNextDeck = (currentDeck, nextDeck, isHorizontal) => {
+//   const axis = isHorizontal ? 'x' : 'y';
+//   return nextDeck[axis] === currentDeck[axis]
+// }
+
+// const isNotPrevDeck = (currentDeck, prevDeck) => (currentDeck.x !== prevDeck?.x) || (currentDeck.y !== prevDeck?.y)
+
+
+// const getNeighboursDecks = (board, currentDeck) => DELTAS.map(
+//   delta => ({x: currentDeck.x + delta.x, y: currentDeck.y + delta.y})
+//   ).filter(({x, y}) => isOnBoard(board.length, x, y));
+
+
+// const getNotCheckedNeighboursDecks = (board, currentDeck, prevDeck) => getNeighboursDecks(board, currentDeck)
+// .filter(({x, y}) => isNotChecked(board[y][x] && isNotPrevDeck(currentDeck, prevDeck)))
+
+
+// const SHIPS = {
+//   '4': 1,
+//   '3': 2,
+//   '2': 3,
+//   '1': 4
+// }
+
+// function validateBattlefield(field) {
+//   // write your magic here
+
+//   for(let y = 0; y < field.length; y++){
+//     for(let x = 0; x < field.length; x++){
+//       const currentField = field[y][x]; // 1
+      
+//       if(currentField === CHECKED){
+//         continue;
+//       }
+      
+//       const shipSize = validateShip(field, 1, { x, y }, null)
+      
+//       if(shipSize === -1){
+//         return false;
+//       }
+      
+//       SHIPS[shipSize] -= 1;
+      
+//     }
+//   }
+  
+//   return Object.values(SHIPS).every(count => count === 0);
+// }
+
+
+// function validateShip(board, length, currentDeck, prevDeck, isHorizontal = null){
+  
+//   if(length > 4){
+//     return -1;
+//   }
+  
+//   board[currentDeck.y][currentDeck.x] = 0;
+  
+  
+//   const neighboursDecks = getNotCheckedNeighboursDecks(board, currentDeck, prevDeck)
+  
+//   if(neighboursDecks.length === 0){
+//     if(prevDeck === null){
+//       return 1;
+//     }
+    
+//     return length;
+//   }
+  
+  
+//   if(neighboursDecks.length === 1){
+//     const nextDeck = neighboursDecks[0];
+    
+    
+//     if(isHorizontal === null){
+//       return validateShip(board, length + 1, nextDeck, currentDeck, nextDeck.x === currentDeck.x);
+//     }
+    
+    
+//     if(isValidNextDeck(currentDeck, nextDeck, isHorizontal)){
+//       return validateShip(board, length + 1, nextDeck, currentDeck, isHorizontal);
+//     }
+    
+//     return -1;
+    
+//   }
+  
+//   return -1;
+  
+// }
+
+// -------------------------------
+
+
+// const OPERATION_SIGNS = {
+//   PLUS: '+',
+//   MINUS: '-',
+//   TIMES: '*',
+//   DIVIDE: '/',
+// }
+
+// const OPERATIONS = {
+//   [OPERATION_SIGNS.PLUS]: (firstNum, secondNum) => firstNum + secondNum,
+//   [OPERATION_SIGNS.MINUS]: (firstNum, secondNum) => firstNum - secondNum,
+//   [OPERATION_SIGNS.TIMES]: (firstNum, secondNum) => firstNum * secondNum,
+//   [OPERATION_SIGNS.DIVIDE]: (firstNum, secondNum) => Math.floor(firstNum / secondNum),
+// }
+
+// const getNumberOrCalc = (calcFunction, number) => {
+//   return calcFunction ? calcFunction(number) : number;
+// }
+
+// const zero = (calcFunction) => getNumberOrCalc(calcFunction, 0);
+// const one = (calcFunction) => getNumberOrCalc(calcFunction, 1);
+// const two = (calcFunction) => getNumberOrCalc(calcFunction, 2);
+// const three = (calcFunction) => getNumberOrCalc(calcFunction, 3);
+// const four = (calcFunction) => getNumberOrCalc(calcFunction, 4);
+// const five = (calcFunction) => getNumberOrCalc(calcFunction, 5);
+// const six = (calcFunction) => getNumberOrCalc(calcFunction, 6);
+// const seven = (calcFunction) => getNumberOrCalc(calcFunction, 7);
+// const eight = (calcFunction) => getNumberOrCalc(calcFunction, 8);
+// const nine = (calcFunction) => getNumberOrCalc(calcFunction, 9);
+
+
+
+// const plus = (number) => (number1) => OPERATIONS[OPERATION_SIGNS.PLUS](number1, number);
+
+// const minus = (number) => (number1) => OPERATIONS[OPERATION_SIGNS.MINUS](number1, number);
+
+// const times = (number) => (number1) => OPERATIONS[OPERATION_SIGNS.TIMES](number1, number);
+
+// const dividedBy = (number) => (number1) => OPERATIONS[OPERATION_SIGNS.DIVIDE](number1, number);
+
+// let x = 10;
+// let y = 20;
+
+// [x, y] = [y, x]
+// console.log(x,y)
+
+// let value = 20;
+
+// if (true) {
+//   // console.log(value);
+//   let value = 10;
+//   console.log(value);
+// }
+
+// const value;
+//  value = 'bunny'
+
+// const max = 10;
+// let amount = 0;
+
+// while (amount++ < max) {
+//     let sum;
+//     sum += amount;
+// }
+
+// console.log(sum)
+
+// const person = {
+//     f: 'j',
+//     sh() {
+//         console.log(this.f);
+//     },
+// }
+
+// const foo = function (callback) {
+//     callback()
+// }
+
+// foo(person.sh)
+
+// const add = (a = 0, b = 10) => a + b;
+// const result = add(10);
+// console.log(result)
