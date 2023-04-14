@@ -7,11 +7,11 @@
 
 // console.log(highAndLow("1 2 -3 4 5"));
 
-// function squareDigits(num){
-//     const arr = String(num).split('');
-//     for (let i = 0; i < arr.length; i+=1) {
-//         arr[i] = Number(arr[i])**2;
-//     }
+//function squareDigits(num){
+//   const arr = String(num).split('');
+//  for (let i = 0; i < arr.length; i+=1) {
+//       arr[i] = Number(arr[i])**2;
+//   }
 
 //     return Number(arr.join(''));
 // }
