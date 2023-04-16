@@ -1610,16 +1610,32 @@
 
 // console.log(object1);
 
-function isAnagram(string1, string2) {
-  if (string1.length !== string2.length) return false;
+// function isAnagram(string1, string2) {
+//   if (string1.length !== string2.length) return false;
 
-  const sortedString1 = string1.toLowerCase().split('').sort().join('');
-  const sortedString2 = string2.toLowerCase().split('').sort().join('');
+//   const sortedString1 = string1.toLowerCase().split('').sort().join('');
+//   const sortedString2 = string2.toLowerCase().split('').sort().join('');
 
-  if (sortedString1 === sortedString2) {
-    return true;
-  }
-  return false;
+//   if (sortedString1 === sortedString2) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// console.log(isAnagram('aNna', 'naaN'));
+
+async function consoleFanction(elem) {
+    console.log('from callback: ', elem);
+    return elem;
 }
 
-console.log(isAnagram('aNna', 'naaN'));
+// async function asyncArray(array, callback) {
+//   const response = [];
+//   for (let elem of array) {
+//     const data = await callback(elem);
+//     response.push(data);
+//     console.log(data);
+//   }
+//   return response;
+// }
+// asyncArray(['apple', 'tomato'], consoleFanction);
